@@ -3,14 +3,14 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
-        DOCKERHUB_REPO = 'vevego/devopschain'
-        DOCKER_IMAGE_TAG = 'ver2'
+        DOCKERHUB_REPO = 'vevego/otp_week7_inclass'
+        DOCKER_IMAGE_TAG = 'latest_v1'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ADirin/devopschain_f2024.git'
+                git branch: 'main' ,url: 'https://github.com/vevego/OTP_week7'
             }
         }
         stage('Run Tests') {
